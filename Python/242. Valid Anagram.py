@@ -5,3 +5,7 @@ class Solution:
         list_s.sort()
         list_t.sort()
         return  list_s==list_t
+
+        #alternative approach 
+        from collections import Counter
+        return Counter(s)==Counter(t)
