@@ -11,3 +11,14 @@ class Solution:
                     if indexes[i] - indexes[i-1] <= k:
                         return True
         return False 
+    
+class Solution:
+    def containsNearbyDuplicate(self, nums: List[int], k: int) -> bool:
+        hashmap = defaultdict(int)
+
+        for i, num in enumerate(nums):
+            if num in hashmap and i - hashmap[num] <= k:
+                return True
+            else:
+                hashmap[num] = i
+        return False 
